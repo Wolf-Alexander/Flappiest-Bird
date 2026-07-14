@@ -19,6 +19,10 @@ public class BirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (game.hasStarted)
+        {
+            myRigidbody.gravityScale = 2;
+        }
         if (transform.position.y <= 13 && game.hasStarted == true)
         {
             if (Input.GetKeyDown(KeyCode.Space) && over == false)

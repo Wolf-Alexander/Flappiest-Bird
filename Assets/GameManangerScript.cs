@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManangerScript : MonoBehaviour
 {
@@ -7,14 +8,23 @@ public class GameManangerScript : MonoBehaviour
     public GameObject startScreen;
     public BirdScript bird;
     public PipeSpawnScript pipe;
+    public PipeScript pipy;
     public GameObject text;
     public bool hasStarted = false;
+    public GameObject slider;
+    public SliderScript sScript;
+    public Text hstext;
+    public int highscore;
 
     public GameObject birdy;
     void Start()
     {
         text.SetActive(false);
         birdy.SetActive(false);
+        slider.SetActive(false);
+        highscore = PlayerPrefs.GetInt("Highscore",0);
+
+        hstext.text = "Highscore: " + highscore.ToString();
     }
 
     // Update is called once per frame
@@ -27,6 +37,8 @@ public class GameManangerScript : MonoBehaviour
     {
         startScreen.SetActive(false);
 
+        slider.SetActive(false);
+
         hasStarted = true;
 
         text.SetActive(true);
@@ -35,5 +47,17 @@ public class GameManangerScript : MonoBehaviour
 
         bird.myRigidbody.gravityScale = 2;
 
+    }
+
+    public void setDifficulty()
+    {
+        if (slider.activeInHierarchy)
+        {
+            slider.SetActive(false);
+        }
+        else
+        {
+            slider.SetActive(true);
+        }
     }
 }

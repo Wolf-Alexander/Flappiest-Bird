@@ -5,13 +5,28 @@ using UnityEngine.UI;
 public class LogicScript : MonoBehaviour
 {
     public int playerScore;
+    public int highscore;
     public Text scoretext;
+    public Text hstext;
     public GameObject gameOverScreen;
+    public SliderScript slider;
+    public Slider s;
     [ContextMenu("Increase Score")]
+
+    void Awake()
+    {
+        highscore = PlayerPrefs.GetInt("Highscore",0);
+    }
     public void addScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;
         scoretext.text = playerScore.ToString();
+
+        if (playerScore >= highscore)
+        {
+            hstext.text = "Highscore: " + playerScore.ToString();
+            highscore = playerScore;
+        }
     }
 
     public void restartGame()
@@ -21,6 +36,9 @@ public class LogicScript : MonoBehaviour
 
     public void gameOver()
     {
+        PlayerPrefs.SetInt("Highscore",highscore);
+        PlayerPrefs.SetFloat("Difficulty",s.value);
+        //hstext.text = "Highscore: " + highscore;
         gameOverScreen.SetActive(true);
     }
 }

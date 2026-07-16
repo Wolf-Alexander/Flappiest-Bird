@@ -11,6 +11,8 @@ public class LogicScript : MonoBehaviour
     public GameObject gameOverScreen;
     public SliderScript slider;
     public Slider s;
+    public GameObject music;
+    public AudioSource scoresound;
     [ContextMenu("Increase Score")]
 
     void Awake()
@@ -19,6 +21,7 @@ public class LogicScript : MonoBehaviour
     }
     public void addScore(int scoreToAdd)
     {
+        scoresound.Play();
         playerScore += scoreToAdd;
         scoretext.text = playerScore.ToString();
 
@@ -39,6 +42,7 @@ public class LogicScript : MonoBehaviour
         PlayerPrefs.SetInt("Highscore",highscore);
         PlayerPrefs.SetFloat("Difficulty",s.value);
         //hstext.text = "Highscore: " + highscore;
+        music.SetActive(false);
         gameOverScreen.SetActive(true);
     }
 }

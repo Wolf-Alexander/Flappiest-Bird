@@ -15,6 +15,7 @@ public class GameManangerScript : MonoBehaviour
     public SliderScript sScript;
     public Text hstext;
     public int highscore;
+    public GameObject music;
 
     public GameObject birdy;
     void Start()
@@ -22,6 +23,7 @@ public class GameManangerScript : MonoBehaviour
         text.SetActive(false);
         birdy.SetActive(false);
         slider.SetActive(false);
+        music.SetActive(false);
         highscore = PlayerPrefs.GetInt("Highscore",0);
 
         hstext.text = "Highscore: " + highscore.ToString();
@@ -46,6 +48,8 @@ public class GameManangerScript : MonoBehaviour
         birdy.SetActive(true);
 
         bird.myRigidbody.gravityScale = 2;
+
+        music.SetActive(true);
 
     }
 

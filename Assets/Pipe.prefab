@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   logic: {fileID: 0}
+  scoresound: {fileID: 5736491362787361630, guid: d3a33a9e8a09f9543b5da154bd2432e1, type: 3}
 --- !u!1 &7075096282653474786
 GameObject:
   m_ObjectHideFlags: 0

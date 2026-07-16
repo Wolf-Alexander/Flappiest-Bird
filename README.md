@@ -29,11 +29,11 @@ This game has the main Flappy Bird features you would expect.
 <img width="1906" height="1072" alt="image" src="https://github.com/user-attachments/assets/0fac74fb-b201-48f2-ad68-2b1257f65901" />
 (Very designfull...)
 
-## To-Do's
+## To-Do's (Well... I did it :))
 
-- Scoreboard
-- Music
-- Better graphics...
+- Scoreboard (Done)
+- Music (Done)
+- Difficulty switch (Done)
 
 <img width="1916" height="1070" alt="image" src="https://github.com/user-attachments/assets/993d2c64-f0e7-45ec-b833-b6bcfad133c5" />
 
